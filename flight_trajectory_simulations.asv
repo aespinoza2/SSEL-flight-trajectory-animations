@@ -4,14 +4,14 @@
 fullfile(matlabroot, 'examples', 'aero', 'data')
 
 %% Import flight trajectory data
-tdata = readmatrix('traj.csv');
+tdata = readmatrix('traj.mat');
 
 %% Create a time series object from trajectory data
 ts = timeseries([convang(tdata(:,[3 2]),'deg','rad') ...
     tdata(:,4) convang(tdata(:,5:7),'deg','rad')],tdata(:,1));
 % Array60F
-ts = [tdata(:,1) convang(tdata(:,[3 2]),'deg','rad') tdata(:,4) ... 
-    convang(tdata(:,5:7),'deg','rad')];
+%ts = [tdata(:,1) convang(tdata(:,[3 2]),'deg','rad') tdata(:,4) ... 
+%    convang(tdata(:,5:7),'deg','rad')];
 
 % Array3DoF
 %ts = [tdata(:,1) convang(tdata(:,3),'deg','rad') tdata(:,4) ... 
