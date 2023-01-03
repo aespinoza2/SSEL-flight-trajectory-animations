@@ -11,7 +11,7 @@ time_data = readmatrix("time.csv");
 %{
 Use the MATLAB® timeseries command to create the time series 
 object, ts, from the latitude, longitude, altitude, and Euler angle 
-data along with the time array in tdata. To convert the latitude, 
+data along with the time array in traj_data. To convert the latitude, 
 longitude, and Euler angles from degrees to radians, use the 
 convang function.
 %}
