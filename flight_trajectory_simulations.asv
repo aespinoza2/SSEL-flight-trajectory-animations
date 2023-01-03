@@ -17,7 +17,7 @@ convang function.
 %}
 
 ts = timeseries([convang(tdata(:,[3 2]),'deg','rad') ...
-    tdata(:,4) convang(tdata(:,5:7),'deg','rad')],tdata(:,12));
+    tdata(:,4) convang(tdata(:,5:7),'deg','rad')],tdata(:,1));
 % Array6DoF
 % ts = [tdata(:,1) convang(tdata(:,[3 2]),'deg','rad') tdata(:,4) ... 
 %    convang(tdata(:,5:7),'deg','rad')];
