@@ -1,5 +1,5 @@
 % Create Flight Animations from Trajectory Data
-% test
+
 %% Location of HL20 folder
 fullfile(matlabroot, "examples", "aero", "data");
 
