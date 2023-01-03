@@ -1,10 +1,11 @@
 % Create Flight Animations from Trajectory Data
 
 %% Location of HL20 folder
-fullfile(matlabroot, 'examples', 'aero', 'data')
+fullfile(matlabroot, "examples", "aero", "data");
 
 %% Import flight trajectory data
-tdata = readmatrix('traj.csv');
+traj_data = readmatrix("traj.csv");
+time_data = readmatrix("time.csv");
 
 %% Create a time series object from trajectory data
 
@@ -16,8 +17,8 @@ longitude, and Euler angles from degrees to radians, use the
 convang function.
 %}
 
-ts = timeseries([convang(tdata(:,[3 2]),'deg','rad') ...
-    tdata(:,4) convang(tdata(:,5:7),'deg','rad')],tdata(:,12));
+ts = timeseries([convang(traj_data(:,[3 2]),'deg','rad') ...
+    traj_data(:,4) convang(traj_data(:,5:7),'deg','rad')],time_data(:,1));
 % Array6DoF
 % ts = [tdata(:,1) convang(tdata(:,[3 2]),'deg','rad') tdata(:,4) ... 
 %    convang(tdata(:,5:7),'deg','rad')];
@@ -54,7 +55,7 @@ h.InstallScenery = true;
 h.DisableShaders = true;
 
 % Set the seconds of animation data per second of wall-clock time
-h.TimeScaling = 5;
+h.TimeScaling = 1;
 
 % Check the FlightGearAnimation object properties and their values
 get(h)
