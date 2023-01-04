@@ -17,8 +17,8 @@ longitude, and Euler angles from degrees to radians, use the
 convang function.
 %}
 
-ts = timeseries([convang(traj_data(:,[3 2]),"deg","rad") ... 
-    alt_data(:,1) convang(traj_data(:,5:7),"deg","rad")],time_data(:,1));
+ts = timeseries([convang(traj_data(:,[3 2]),'deg','rad') ... 
+    alt_data(:,1) convang(traj_data(:,5:7),'deg','rad')],time_data(:,1));
 
 % Array6DoF
 % ts = [tdata(:,1) convang(tdata(:,[3 2]),'deg','rad') tdata(:,4) ... 
@@ -33,18 +33,18 @@ ts = timeseries([convang(traj_data(:,[3 2]),"deg","rad") ...
 h = Aero.FlightGearAnimation;
 
 % Set FlightGearAnimation object properties for timeseries
-h.TimeseriesSourceType = "Timeseries";
+h.TimeseriesSourceType = 'Timeseries';
 h.TimeseriesSource = ts;
 
 % Set FlightGearAnimation object properties about FlightGear
-h.FlightGearBaseDirectory = "C:\Program Files\FlightGear 2020.3";
+h.FlightGearBaseDirectory = 'C:\Program Files\FlightGear 2020.3';
 h.GeometryModelName = "HL20";
-h.DestinationIpAddress =  "127.0.0.1";
-h.DestinationPort = "5502";
+h.DestinationIpAddress =  '127.0.0.1';
+h.DestinationPort = '5502';
 
 % Set the desired initial conditions (location and orientation) for FlightGear flight simulator
-h.AirportId = "KSFO";
-h.RunwayId = "10L";
+h.AirportId = 'KSFO';
+h.RunwayId = '10L';
 h.InitialAltitude = 7224;
 h.InitialHeading = 113;
 h.OffsetDistance = 4.72;
