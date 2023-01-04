@@ -56,7 +56,7 @@ h.InstallScenery = true;
 h.DisableShaders = true;
 
 % Set the seconds of animation data per second of wall-clock time
-h.TimeScaling = .5;
+h.TimeScaling = 1;
 
 % Check the FlightGearAnimation object properties and their values
 get(h)
