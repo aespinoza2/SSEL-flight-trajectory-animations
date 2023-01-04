@@ -16,7 +16,7 @@ longitude, and Euler angles from degrees to radians, use the
 convang function.
 %}
 
-ts = timeseries([convang(traj_data(:,[3 2]),'deg','rad') ...
+ts = timeseries([convang(traj_data(:,8 9]),'deg','rad') ...
     traj_data(:,4) convang(traj_data(:,5:7),'deg','rad')],time_data(:,1));
 % Array6DoF
 % ts = [tdata(:,1) convang(tdata(:,[3 2]),'deg','rad') tdata(:,4) ... 
@@ -63,15 +63,15 @@ get(h)
 GenerateRunScript(h)
 
 %% Start FlightGear flight simulator
-system('runfg.bat &');
+system("runfg.bat &");
 
 %% Play the flight animation of trajectory data
 play(h)
 
 %% Dsiplay a screenshot of the flight animation, using MATLAB image command
-image(imread(fullfile(matlabroot, 'examples','aero','data','astfganim01.png'),'png'));
+image(imread(fullfile(matlabroot, "examples","aero","data","astfganim01.png"),"png"));
 axis off;
-set(gca,'Position',[ 0 0 1 1 ]);
-set(gcf,'MenuBar','none');
+set(gca,"Position",[ 0 0 1 1 ]);
+set(gcf,"MenuBar","none");
 
 
