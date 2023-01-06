@@ -7,6 +7,7 @@ fullfile(matlabroot, "examples", "aero", "data");
 traj_data = readmatrix("traj.csv");
 time_data = readmatrix("time.csv");
 alt_data = readmatrix("alt.csv");
+eul_data = readmatrix("eul.csv");
 
 %% Create a time series object from trajectory data
 
@@ -19,7 +20,7 @@ convang function.
 %}
 
 ts = timeseries([convang(traj_data(:,[3 2]),"deg","rad") ... 
-    alt_data(:,1) convang(traj_data(:,[5:7]),"deg","rad")],time_data(:,1));
+    alt_data(:,1) convang(eul_data(:,[3,2,1]),"deg","rad")],time_data(:,1));
 
 % Array6DoF
 % ts = [tdata(:,1) convang(tdata(:,[3 2]),'deg','rad') tdata(:,4) ... 
