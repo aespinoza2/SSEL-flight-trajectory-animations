@@ -1,6 +1,6 @@
 % Create Flight Animations from Trajectory Data
 
-%% Location of HL20 folder
+%% Location of HL20 folder template
 fullfile(matlabroot, "examples", "aero", "data");
 
 %% Import flight trajectory data
@@ -19,7 +19,7 @@ longitude, and Euler angles from degrees to radians, use the
 convang function.
 %}
 
-ts = timeseries([convang(traj_data(:,[3 2]),"deg","rad") ... 
+ts = timeseries([convang(traj_data(:,[2 1]),"deg","rad") ... 
     alt_data(:,1) convang(eul_data(:,[3,2,1]),"deg","rad")],time_data(:,1));
 
 % Array6DoF
@@ -40,7 +40,7 @@ h.TimeseriesSource = ts;
 
 % Set FlightGearAnimation object properties about FlightGear
 h.FlightGearBaseDirectory = "C:\Program Files\FlightGear 2020.3";
-h.GeometryModelName = "HL20";
+h.GeometryModelName = "HL21";
 h.DestinationIpAddress =  "127.0.0.1";
 h.DestinationPort = "5502";
 
@@ -48,7 +48,7 @@ h.DestinationPort = "5502";
 h.AirportId = "KSFO";
 h.RunwayId = "10L";
 h.InitialAltitude = 0; % default=7224
-h.InitialHeading = 113;
+h.InitialHeading = 113; % default 113
 h.OffsetDistance = 4.72;
 h.OffsetAzimuth = 0;
 
