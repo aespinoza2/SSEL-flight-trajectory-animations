@@ -51,6 +51,7 @@ h.InitialAltitude = 0; % default=7224
 h.InitialHeading = 113; % default 113
 h.OffsetDistance = 4.72;
 h.OffsetAzimuth = 0;
+h.StartingPos
 
 h.InstallScenery = true;
 
