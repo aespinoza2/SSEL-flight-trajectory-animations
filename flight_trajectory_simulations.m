@@ -20,7 +20,7 @@ convang function.
 %}
 
 ts = timeseries([convang(traj_data(:,[2 1]),"deg","rad") ... 
-    alt_data(:,1) convang(eul_data(:,[3,2,1]),"deg","rad")],time_data(:,1));
+    alt_data(:,1) convang(eul_data(:,[3 2 1]),"deg","rad")],time_data(:,1));
 
 % Array6DoF
 % ts = [time_data(:,1) convang(traj_data(:,[2 1]),'deg','rad') alt_data(:,1) ... 
@@ -47,7 +47,7 @@ h.DestinationPort = "5502";
 % Set the desired initial conditions (location and orientation) for FlightGear flight simulator
 h.AirportId = "KSFO";
 h.RunwayId = "10L";
-h.InitialAltitude = 0; % default=7224
+h.InitialAltitude = 200; % default=7224
 h.InitialHeading = 113; % default 113
 h.OffsetDistance = 4.72;
 h.OffsetAzimuth = 0;
