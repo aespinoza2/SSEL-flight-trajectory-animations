@@ -47,7 +47,7 @@ h.DestinationPort = "5502";
 % Set the desired initial conditions (location and orientation) for FlightGear flight simulator
 h.AirportId = "KSFO";
 h.RunwayId = "10L";
-h.InitialAltitude = 200; % default=7224
+h.InitialAltitude = 300; % default=7224
 h.InitialHeading = 113; % default 113
 h.OffsetDistance = 4.72;
 h.OffsetAzimuth = 0;
